@@ -49,13 +49,13 @@
 
 							<div class="navbar-collapse collapse">
 								<ul class="nav navbar-nav">
-									<li> <a href="#home" class="smoothScroll"> <?php echo pll__("Home") ?></a></li>
-									<li> <a href="#about" class="smoothScroll"> <?php echo pll__("About Us") ?></a></li>
-									<li> <a href="#service" class="smoothScroll"> <?php echo pll__("Service") ?></a></li>
-									<li> <a href="#porfolio" class="smoothScroll"> <?php echo pll__("Portfolio") ?></a></li>
-									<li> <a href="#testimonials" class="smoothScroll"> <?php echo pll__("Testimonials") ?> </a></li>
-									<li> <a href="#team" class="smoothScroll"> <?php echo pll__("Team") ?></a></li>
-									<li> <a href="#contact" class="smoothScroll"> <?php echo pll__("Contact Us") ?> </a></li>
+									<li class=""> <a href="#home" class="smoothScroll" style="font-size: 12px; margin-right: -5px;"> <?php echo pll__("Home") ?></a></li>
+									<li> <a href="#about" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("About Us") ?></a></li>
+									<li> <a href="#service" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Service") ?></a></li>
+									<li> <a href="#porfolio" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Portfolio") ?></a></li>
+									<li> <a href="#testimonials" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Testimonials") ?> </a></li>
+									<li> <a href="#team" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Team") ?></a></li>
+									<li> <a href="#contact" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Contact Us") ?> </a></li>
 									<?php
 									wp_nav_menu( array(
 										'theme_location'  => 'primary',

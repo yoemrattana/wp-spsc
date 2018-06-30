@@ -10,6 +10,7 @@ $about_us_title         = get_field("about_us_title");
 $about_us_subtitle      = get_field("about_us_subtitle");
 $about_us_description   = get_field("about_us_description");
 
+$our_service_title      = get_field("our_service_title");
 get_header();
 ?>
 
@@ -71,7 +72,7 @@ get_header();
                 <h1><?php echo $about_us_title?></h1>
                 <div class="aboutTxt"><?php echo $about_us_subtitle ?></div>
                 <p><?php echo $about_us_description?></p>
-                <div class="readmore"><a href="#" class="btn">Read More</a></div>
+                <div class="readmore"><a href="#" class="btn"><?php echo pll__("Read More") ?></a></div>
 
             </div>
         </div>
@@ -79,6 +80,33 @@ get_header();
 </div>
 
 <!--About start-->
+
+<!--service start-->
+<div class="service-wrap" id="service">
+    <div class="container">
+        <h1><?php echo $our_service_title ;?></h1>
+        <ul class="serviceList owl-carousel">
+            <?php $arg = ['post_type' => 'our_service', 'orderby' => 'post_id', 'order' => 'DESC']; ?>
+            <?php $services = new WP_Query($arg) ?>
+            <?php while ( $services->have_posts() ) : $services->the_post(); ?>
+            <li class="item">
+                <div class="service-image"><img src="<?php  echo  get_field('image')['url']; ?>" alt="<?php  echo  get_field('image')['alt']; ?>">
+                    <div class="hoverlink">
+                        <div class="icon"><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></div>
+                    </div>
+                </div>
+                <div class="service-details">
+                    <h3><a href="#"><?php the_title() ?></a></h3>
+                    <p><?php echo wp_html_excerpt($services->post->description, 20), '...'; ?></p>
+                    <div class="readmore"><a href="#">Read More</a></div>
+                </div>
+            </li>
+            <?php endwhile; ?>
+        </ul>
+    </div>
+    <a href="#"> <?php echo pll__("Learn More") ?></a>
+</div>
+<!--service end-->
 
 <?php
 get_footer();
