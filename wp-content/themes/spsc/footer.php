@@ -8,7 +8,7 @@
  *
  * @package spsc
  */
-
+$my_conf = pods('my_config');
 ?>
 
 
@@ -18,15 +18,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<div class="copyright">©Copyright 2017 company name. All Rights Reserved</div>
+				<div class="copyright"><?php echo $my_conf->display('footer_text'); ?></div>
 			</div>
 			<div class="col-md-8">
 				<ul class="social-icons">
-					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="<?php echo $my_conf->display('facebook_page'); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<!--<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 					<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
 					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-					<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>-->
 				</ul>
 			</div>
 		</div>

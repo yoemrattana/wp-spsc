@@ -9,6 +9,7 @@
  * @package spsc
  */
 
+$my_conf = pods('my_config');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -26,6 +27,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
 
 	<?php wp_head(); ?>
+	<meta name="google-site-verification" content="QjV7vhoQO1LBmh5L16tyv6h8miEAA1POUIcVxmkzeYc" />
 </head>
 
 <body <?php body_class(); ?>>
@@ -37,7 +39,9 @@
 			<!-- Row Rtart -->
 			<div class="row">
 				<div class="col-md-3 col-sm-3">
-					<div class="logo"><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/logo.png" alt=""></div>
+
+					<a href="/" class="logo"><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/spsc-group.png" alt="spsc-group"></a>
+
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 					</div>
@@ -49,13 +53,23 @@
 
 							<div class="navbar-collapse collapse">
 								<ul class="nav navbar-nav">
-									<li class=""> <a href="#home" class="smoothScroll" style="font-size: 12px; margin-right: -5px;"> <?php echo pll__("Home") ?></a></li>
-									<li> <a href="#about" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("About Us") ?></a></li>
-									<li> <a href="#service" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Service") ?></a></li>
-									<li> <a href="#porfolio" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Portfolio") ?></a></li>
-									<li> <a href="#testimonials" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Testimonials") ?> </a></li>
-									<li> <a href="#team" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Team") ?></a></li>
-									<li> <a href="#contact" class="smoothScroll" style="font-size: 12px;"> <?php echo pll__("Contact Us") ?> </a></li>
+									<?php if ( is_page( 'home' ) || is_page( 'home-kh') ) : ?>
+									<li class=""> <a href="#home" class="smoothScroll" style="margin-right: -5px;"> <?php echo pll__("Home") ?></a></li>
+									<li> <a href="#about" class="smoothScroll" > <?php echo pll__("About Us") ?></a></li>
+									<li> <a href="#service" class="smoothScroll"> <?php echo pll__("Service") ?></a></li>
+									<li> <a href="#porfolio" class="smoothScroll" > <?php echo pll__("Portfolio") ?></a></li>
+									<li> <a href="#testimonials" class="smoothScroll" > <?php echo pll__("Testimonials") ?> </a></li>
+									<li> <a href="#team" class="smoothScroll" > <?php echo pll__("Team") ?></a></li>
+									<li> <a href="#contact" class="smoothScroll"> <?php echo pll__("Contact Us") ?> </a></li>
+									<?php else : ?>
+										<li class=""> <a href="/#home" class="smoothScroll" style="margin-right: -5px;"> <?php echo pll__("Home") ?></a></li>
+										<li> <a href="<?php home_url( '/about-us' ) ?>/#about" class="smoothScroll"> <?php echo pll__("About Us") ?></a></li>
+										<li> <a href="<?php home_url( '/service' ) ?>/#service" class="smoothScroll" > <?php echo pll__("Service") ?></a></li>
+										<li> <a href="<?php home_url( '/portfolio' ) ?>/#porfolio" class="smoothScroll" > <?php echo pll__("Portfolio") ?></a></li>
+										<li> <a href="/#testimonials" class="smoothScroll" > <?php echo pll__("Testimonials") ?> </a></li>
+										<li> <a href="/#team" class="smoothScroll" > <?php echo pll__("Team") ?></a></li>
+										<li> <a href="/#contact" class="smoothScroll" > <?php echo pll__("Contact Us") ?> </a></li>
+									<?php endif; ?>
 									<?php
 									wp_nav_menu( array(
 										'theme_location'  => 'primary',

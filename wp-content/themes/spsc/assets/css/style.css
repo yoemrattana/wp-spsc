@@ -392,7 +392,53 @@ Own
 .mn{
 	font-size: 1px;
 }
+.contact_infor {
+	margin-bottom: 30px;
+	margin-top: 10px;
+	color: #fff;
+}
 
+.contact_infor ul {
+	margin: 0;
+}
+
+.contact_infor ul li {
+	border-bottom:  1px solid #ccc;
+	padding-bottom: 10px;
+	padding-top:    10px;
+	list-style:     none;
+}
+
+.contact_infor ul li:last-child {
+	border-bottom: none;
+}
+
+.contact_infor ul li label {
+	text-transform: uppercase;
+	width:          190px;
+	display:        inline-block;
+	vertical-align: middle;
+	margin-bottom:  0;
+}
+
+.contact_infor ul li label i {
+	width:          34px;
+	height:         34px;
+	line-height:    34px;
+	text-align:     center;
+	background:     #ccc;
+	border-radius:  50%;
+	display:        inline-block;
+	vertical-align: middle;
+	color:          #fff;
+	margin-right:   10px;
+}
+
+.contact_infor ul li .des {
+	width:          calc(100% - 194px);
+	display:        inline-block;
+	vertical-align: middle;
+}
 /*****************************************
 		media screen
 *****************************************/
